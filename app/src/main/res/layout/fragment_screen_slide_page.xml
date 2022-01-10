@@ -10,6 +10,5 @@
         android:layout_height="wrap_content"
         android:lineSpacingMultiplier="1.2"
         android:padding="16dp"
-        android:id="@+id/slide_position"
-        android:text="@string/tab_text_1" />
+        android:id="@+id/slide_position" />
 </ScrollView>
