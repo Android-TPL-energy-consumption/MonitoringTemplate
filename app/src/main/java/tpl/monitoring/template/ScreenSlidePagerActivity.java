@@ -10,7 +10,6 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import tpl.monitoring.template.R;
 import tpl.monitoring.template.ui.main.ScreenSlidePageFragment;
 
 public class ScreenSlidePagerActivity extends FragmentActivity {
