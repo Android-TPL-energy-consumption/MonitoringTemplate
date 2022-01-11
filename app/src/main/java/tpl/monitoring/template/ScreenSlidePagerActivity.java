@@ -6,9 +6,9 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentStatePagerAdapter;
-import androidx.viewpager.widget.PagerAdapter;
-import androidx.viewpager.widget.ViewPager;
+import androidx.lifecycle.Lifecycle;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.viewpager2.widget.ViewPager2;
 
 import tpl.monitoring.template.ui.main.ScreenSlidePageFragment;
 
@@ -22,10 +22,9 @@ public class ScreenSlidePagerActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_screen_slide);
-
-        // Instantiate a ViewPager and a PagerAdapter.
-        ViewPager mPager = (ViewPager) findViewById(R.id.pager);
-        PagerAdapter pagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
+        ViewPager2 mPager = (ViewPager2) findViewById(R.id.pager);
+        FragmentStateAdapter pagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager(),
+                super.getLifecycle());
         mPager.setAdapter(pagerAdapter);
     }
 
@@ -33,19 +32,19 @@ public class ScreenSlidePagerActivity extends FragmentActivity {
      * A simple pager adapter that represents 5 ScreenSlidePageFragment objects, in
      * sequence.
      */
-    private static class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
-        public ScreenSlidePagerAdapter(FragmentManager fm) {
-            super(fm);
+    private static class ScreenSlidePagerAdapter extends FragmentStateAdapter {
+        public ScreenSlidePagerAdapter(FragmentManager fm, Lifecycle lifecycle) {
+            super(fm, lifecycle);
         }
 
         @NonNull
         @Override
-        public Fragment getItem(int position) {
+        public Fragment createFragment(int position) {
             return new ScreenSlidePageFragment(position);
         }
 
         @Override
-        public int getCount() {
+        public int getItemCount() {
             return NUM_PAGES;
         }
     }
