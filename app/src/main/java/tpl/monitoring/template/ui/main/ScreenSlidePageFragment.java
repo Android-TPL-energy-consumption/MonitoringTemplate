@@ -39,7 +39,6 @@ public class ScreenSlidePageFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         FragmentScreenSlidePageBinding binding = FragmentScreenSlidePageBinding.inflate(inflater);
-        binding.slidePosition.setText(String.valueOf(_position));
         binding.slideLogo.setImageResource(_getFragmentIcon());
         return binding.getRoot();
     }
