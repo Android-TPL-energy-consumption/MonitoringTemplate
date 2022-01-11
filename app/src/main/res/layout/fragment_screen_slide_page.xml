@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/slide_logo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:contentDescription="@string/random_desc"
         android:src="@android:drawable/ic_delete"
         app:layout_constraintBottom_toBottomOf="parent"
