@@ -21,8 +21,8 @@
 
     <ImageView
         android:id="@+id/slide_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:contentDescription="@string/random_desc"
         android:src="@android:drawable/ic_delete"
         app:layout_constraintEnd_toEndOf="parent"
